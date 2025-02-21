@@ -1,6 +1,18 @@
+import { useState } from 'react';
+
+function getRandomAnimal() {
+  const animals = ['bird', 'cat', 'cow', 'gator', 'horse'];
+  const randomIndex = Math.floor(Math.random() * animals.length);
+  return animals[randomIndex];
+}
+
 function App() {
+  const [animals, setAnimals] = useState([]);
+
   const handleClick = () => {
-    console.log('Button was clicked!');
+    setAnimals((prevAnimals) => {
+      return [...prevAnimals, getRandomAnimal()];
+    });
   };
 
   return (
