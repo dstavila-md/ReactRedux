@@ -20,7 +20,7 @@ function AnimalShow({ type }) {
   const [clicks, setClicks] = useState(0);
 
   const handleClick = () => {
-    setClicks((prevClicks) => prevClicks + 1);
+    setClicks(clicks + 1);
   };
 
   return (
