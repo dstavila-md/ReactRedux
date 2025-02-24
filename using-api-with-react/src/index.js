@@ -5,7 +5,7 @@ import App from './App';
 
 import searchImages from './api';
 
-searchImages().then((response) => {
+searchImages('cars').then((response) => {
   console.log(response);
 });
 
