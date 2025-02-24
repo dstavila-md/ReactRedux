@@ -5,12 +5,11 @@ function SearchBar({ onSubmit }) {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    onSubmit('cars');
+    onSubmit(term);
   };
 
   const onChangeHandler = (event) => {
     setTerm(event.target.value);
-    console.log(term);
   };
 
   return (
