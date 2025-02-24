@@ -5,9 +5,9 @@ import App from './App';
 
 import searchImages from './api';
 
-searchImages('cars').then((response) => {
-  console.log(response);
-});
+// searchImages('cars').then((response) => {
+//   console.log(response);
+// });
 
 const el = document.getElementById('root');
 const root = ReactDOM.createRoot(el);
