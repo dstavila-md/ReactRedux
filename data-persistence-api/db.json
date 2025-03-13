@@ -1,3 +1,16 @@
 {
-  "books": []
+  "books": [
+    {
+      "title": "Dune",
+      "id": 1
+    },
+    {
+      "title": "Dune 2",
+      "id": 2
+    },
+    {
+      "title": "Dune 3",
+      "id": 3
+    }
+  ]
 }
