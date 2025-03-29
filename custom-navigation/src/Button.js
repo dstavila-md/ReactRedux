@@ -13,10 +13,11 @@ function Button({
   warning,
   outline,
   rounded,
+  ...rest
 }) {
   // Tailwind CSS classes are used to style the button
   const classes = twMerge(
-    classnames('flex items-center px-3 py-1.5 border', {
+    classnames(rest.className, 'flex items-center px-3 py-1.5 border', {
       'border-blue-500 bg-blue-500 text-white': primary,
       'border-gray-900 bg-gray-900 text-white': secondary,
       'border-green-500 bg-green-500 text-white': success,
@@ -31,9 +32,14 @@ function Button({
       'text-red-500': outline && danger,
     })
   );
-  return <button className={classes}>{children}</button>;
+  return (
+    <button {...rest} className={classes}>
+      {children}
+    </button>
+  );
 }
 
+// Props validation for the Button component
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   primary: PropTypes.bool,
