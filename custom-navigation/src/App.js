@@ -7,16 +7,16 @@ function App() {
         <Button primary>Click me</Button>
       </div>
       <div>
-        <Button>Click me</Button>
+        <Button danger>Click me</Button>
       </div>
       <div>
-        <Button>Click me</Button>
+        <Button warning>Click me</Button>
       </div>
       <div>
-        <Button>Click me</Button>
+        <Button secondary>Click me</Button>
       </div>
       <div>
-        <Button>Click me</Button>
+        <Button success>Click me</Button>
       </div>
     </div>
   );
