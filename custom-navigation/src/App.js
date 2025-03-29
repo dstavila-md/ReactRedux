@@ -1,3 +1,4 @@
+import { GoBell, GoDatabase, GoEye } from 'react-icons/go';
 import Button from './Button';
 
 function App() {
@@ -5,14 +6,21 @@ function App() {
     <div>
       <div>
         <Button primary outline>
+          <GoBell />
           Click me
         </Button>
       </div>
       <div>
-        <Button danger>Click me</Button>
+        <Button danger>
+          <GoDatabase />
+          Click me
+        </Button>
       </div>
       <div>
-        <Button warning>Click me</Button>
+        <Button warning>
+          <GoEye />
+          Click me
+        </Button>
       </div>
       <div>
         <Button secondary>Click me</Button>
