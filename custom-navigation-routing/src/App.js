@@ -1,35 +1,22 @@
-import { GoBell, GoDatabase, GoEye } from 'react-icons/go';
-import Button from './Button';
+import Accordion from './components/Accordion';
+import Button from './components/Button';
 
 function App() {
-  return (
-    <div>
-      <div>
-        <Button primary outline className='mb-5'>
-          <GoBell />
-          Click me
-        </Button>
-      </div>
-      <div>
-        <Button danger>
-          <GoDatabase />
-          Click me
-        </Button>
-      </div>
-      <div>
-        <Button warning>
-          <GoEye />
-          Click me
-        </Button>
-      </div>
-      <div>
-        <Button secondary>Click me</Button>
-      </div>
-      <div>
-        <Button success>Click me</Button>
-      </div>
-    </div>
-  );
+  const items = [
+    {
+      label: 'Can I use React on a project ?',
+      content: 'You can use React on any project you want.',
+    },
+    {
+      label: 'Can I use JS on a project ?',
+      content: 'You can use JS on any project you want.',
+    },
+    {
+      label: 'Can I use CSS on a project ?',
+      content: 'You can use CSS on any project you want.',
+    },
+  ];
+  return <Accordion />;
 }
 
 export default App;
