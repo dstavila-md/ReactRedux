@@ -1,4 +1,4 @@
-function Accordion() {
+function Accordion({ items }) {
   return <div></div>;
 }
 

@@ -16,7 +16,7 @@ function App() {
       content: 'You can use CSS on any project you want.',
     },
   ];
-  return <Accordion />;
+  return <Accordion items={items} />;
 }
 
 export default App;
