@@ -5,11 +5,7 @@ function Accordion({ items }) {
   const [expandedIndex, setExpandedIndex] = useState(-1);
 
   const handleClick = (index) => {
-    if (expandedIndex === index) {
-      setExpandedIndex(-1);
-    } else {
-      setExpandedIndex(index);
-    }
+    setExpandedIndex((prevIndex) => (prevIndex === index ? -1 : index));
   };
 
   const renderedItems = items.map((item, index) => {
