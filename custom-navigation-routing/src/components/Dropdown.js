@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function Dropdon({ options, selection, onSelect }) {
+function Dropdon({ options, value, onChange }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -14,7 +14,7 @@ function Dropdon({ options, selection, onSelect }) {
     setIsOpen(false);
 
     //Do something with the selected option
-    onSelect(option);
+    onChange(option);
   };
 
   const renderedOptions = options.map((option) => {
@@ -25,7 +25,7 @@ function Dropdon({ options, selection, onSelect }) {
     );
   });
 
-  let content = selection?.label || 'Select...';
+  let content = value?.label || 'Select...';
 
   return (
     <div>

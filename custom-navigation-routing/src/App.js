@@ -14,11 +14,7 @@ function App() {
   ];
 
   return (
-    <Dropdon
-      options={options}
-      selection={selection}
-      onSelect={handleSelection}
-    />
+    <Dropdon options={options} value={selection} onChange={handleSelection} />
   );
 }
 
