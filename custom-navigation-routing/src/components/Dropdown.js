@@ -9,8 +9,19 @@ function Dropdon({ options }) {
     });
   };
 
+  const handleOptionClick = (option) => {
+    //Close dropdown when an option is clicked
+    setIsOpen(false);
+
+    //Do something with the selected option
+  };
+
   const renderedOptions = options.map((option) => {
-    return <div key={option.value}>{option.label}</div>;
+    return (
+      <div key={option.value} onClick={() => handleClick(option)}>
+        {option.label}
+      </div>
+    );
   });
 
   return (
