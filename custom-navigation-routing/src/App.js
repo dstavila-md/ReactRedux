@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Dropdon from './components/Dropdown';
+import Dropdown from './components/Dropdown';
 
 function App() {
   const [selection, setSelection] = useState(null);
@@ -14,7 +14,7 @@ function App() {
   ];
 
   return (
-    <Dropdon options={options} value={selection} onChange={handleSelection} />
+    <Dropdown options={options} value={selection} onChange={handleSelection} />
   );
 }
 
