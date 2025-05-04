@@ -9,7 +9,11 @@ function Dropdon({ options, value, onChange }) {
 
   useEffect(() => {
     const handler = (event) => {
-      console.log(divEl.current);
+      // Check if the click is outside the dropdown
+      // If the dropdown is open and the click is outside, close the dropdown
+      if (divEl.current && !divEl.current.contains(event.target)) {
+        setIsOpen(false);
+      }
     };
 
     document.addEventListener('click', handler, true); // Use capture phase to ensure the event is handled before it reaches the target element
