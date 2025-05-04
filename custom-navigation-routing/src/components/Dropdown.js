@@ -1,10 +1,22 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { GoChevronDown } from 'react-icons/go';
 
 import Panel from './Panel';
 
 function Dropdon({ options, value, onChange }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const handler = (event) => {
+      console.log(event.target);
+    };
+
+    document.addEventListener('click', handler, true); // Use capture phase to ensure the event is handled before it reaches the target element
+
+    return () => {
+      document.removeEventListener('click', handler, true);
+    };
+  }, []);
 
   const handleClick = () => {
     setIsOpen((currentIsOpen) => {
