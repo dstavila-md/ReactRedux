@@ -1,20 +1,12 @@
-import React, { useState } from 'react';
-import Dropdown from './components/Dropdown';
-
 function App() {
-  const [selection, setSelection] = useState(null);
-  const handleSelection = (option) => {
-    setSelection(option);
-  };
-
-  const options = [
-    { label: 'Red', value: 'red' },
-    { label: 'Green', value: 'green' },
-    { label: 'Blue', value: 'blue' },
-  ];
-
   return (
-    <Dropdown options={options} value={selection} onChange={handleSelection} />
+    <div>
+      <h1>Custom Navigation Routing Example</h1>
+      <p>
+        This is a simple example of a React application with custom navigation
+        routing.
+      </p>
+    </div>
   );
 }
 

@@ -3,7 +3,7 @@ import { GoChevronDown } from 'react-icons/go';
 
 import Panel from './Panel';
 
-function Dropdon({ options, value, onChange }) {
+function Dropdown({ options, value, onChange }) {
   const [isOpen, setIsOpen] = useState(false);
   const divEl = useRef(null);
 
@@ -61,4 +61,4 @@ function Dropdon({ options, value, onChange }) {
   );
 }
 
-export default Dropdon;
+export default Dropdown;
