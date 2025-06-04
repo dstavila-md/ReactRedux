@@ -5,12 +5,17 @@ function Link({ to, children }) {
   const { navigate } = useContext(NavigationContext);
 
   const handleClick = (event) => {
+    
+    if(event.metaKey || event.ctrlKey) {
+      return; // Ignore if the link is opened in a new tab or window
+    }
+
     event.preventDefault();
 
     navigate(to);
   };
 
-  return <a onClick={handleClick}></a>;
+  return <a href={to} onClick={handleClick}>{children}</a>;
 }
 
 export default Link;
