@@ -17,9 +17,13 @@ function TablePage() {
     { label: 'Score', render: (fruit) => fruit.score },
   ];
 
+  const keyFn = (fruit) => {
+    return fruit.name;
+  };
+
   return (
     <div>
-      <Table config={config} data={data} />
+      <Table keyFn={keyFn} config={config} data={data} />
     </div>
   );
 }
