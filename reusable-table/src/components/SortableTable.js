@@ -1,4 +1,7 @@
+import { GoArrowSmallDown, GoArrowSmallUp } from 'react-icons/go';
+
 import { useState } from 'react';
+
 import Table from './Table';
 
 function SortableTable(props) {
@@ -26,9 +29,14 @@ function SortableTable(props) {
       ...column,
       header: () => {
         return (
-          <th onClick={() => handleClick(column.label)}>
-            {getIcons(column.label, sortBy, sortOrder)}
-            {column.label} IS SORTABLE
+          <th
+            className='cursor-pointer hover:bg-gray-100'
+            onClick={() => handleClick(column.label)}
+          >
+            <div className='flex items-center'>
+              {getIcons(column.label, sortBy, sortOrder)}
+              {column.label}
+            </div>
           </th>
         );
       },
@@ -59,7 +67,6 @@ function SortableTable(props) {
 
   return (
     <div>
-      {sortOrder} - {sortBy}
       <Table {...props} data={sortedData} config={udpatedConfig} />
     </div>
   );
@@ -67,14 +74,32 @@ function SortableTable(props) {
 
 function getIcons(label, sortBy, sortOder) {
   if (label !== sortBy) {
-    return 'Show both icons';
+    return (
+      <div>
+        <GoArrowSmallUp />
+        <GoArrowSmallDown />
+      </div>
+    );
   }
   if (sortOder === null) {
-    return 'Show both icons';
+    return (
+      <div>
+        <GoArrowSmallUp />
+        <GoArrowSmallDown />
+      </div>
+    );
   } else if (sortOder === 'asc') {
-    return 'show up icon';
+    return (
+      <div>
+        <GoArrowSmallUp />
+      </div>
+    );
   } else if (sortOder === 'desc') {
-    return 'show down icon';
+    return (
+      <div>
+        <GoArrowSmallDown />
+      </div>
+    );
   }
 }
 
