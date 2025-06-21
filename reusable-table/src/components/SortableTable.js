@@ -27,6 +27,7 @@ function SortableTable(props) {
       header: () => {
         return (
           <th onClick={() => handleClick(column.label)}>
+            {getIcons(column.label, sortBy, sortOrder)}
             {column.label} IS SORTABLE
           </th>
         );
@@ -62,6 +63,19 @@ function SortableTable(props) {
       <Table {...props} data={sortedData} config={udpatedConfig} />
     </div>
   );
+}
+
+function getIcons(label, sortBy, sortOder) {
+  if (label !== sortBy) {
+    return 'Show both icons';
+  }
+  if (sortOder === null) {
+    return 'Show both icons';
+  } else if (sortOder === 'asc') {
+    return 'show up icon';
+  } else if (sortOder === 'desc') {
+    return 'show down icon';
+  }
 }
 
 export default SortableTable;
