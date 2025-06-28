@@ -3,21 +3,36 @@ import Button from '../components/Button';
 import Panel from '../components/Panel';
 
 const INCREMENT_COUNT = 'increment';
+const DECREMENT_COUNT = 'decrement';
 const SET_VALUE_TO_ADD = 'change_value_to_add';
+const ADD_VLAUE = 'add_value';
 
 const reducer = (state, action) => {
-  if (action.type === INCREMENT_COUNT) {
-    return {
-      ...state,
-      count: state.count + 1,
-    };
-  } else if (action.type === SET_VALUE_TO_ADD) {
-    return {
-      ...state,
-      valueToAdd: action.payload,
-    };
+  switch (action.type) {
+    case INCREMENT_COUNT:
+      return {
+        ...state,
+        count: state.count + 1,
+      };
+    case SET_VALUE_TO_ADD:
+      return {
+        ...state,
+        valueToAdd: action.payload,
+      };
+    case DECREMENT_COUNT:
+      return {
+        ...state,
+        count: state.count - 1,
+      };
+    case ADD_VLAUE:
+      return {
+        ...state,
+        count: state.count + state.valueToAdd,
+        valueToAdd: 0,
+      };
+    default:
+      return state;
   }
-  return state;
 };
 
 function CounterPage({ initialCount }) {
@@ -27,11 +42,11 @@ function CounterPage({ initialCount }) {
   });
 
   const increment = () => {
-    dispatch({ type: INCREMENT_COUNT, payload: 1 });
+    dispatch({ type: INCREMENT_COUNT });
   };
 
   const decrement = () => {
-    // setCount(count - 1);
+    dispatch({ type: DECREMENT_COUNT });
   };
 
   const handleChange = (event) => {
@@ -44,8 +59,7 @@ function CounterPage({ initialCount }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // setCount(count + valueToAdd);
-    // setValueToAdd(0); // Reset the input field after adding
+    dispatch({ type: ADD_VLAUE });
   };
 
   return (
