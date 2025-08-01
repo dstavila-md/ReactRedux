@@ -10,7 +10,7 @@ function CarSearch() {
   };
   return (
     <div className='list-header'>
-      <h3 className='title is-3'> My Cars</h3>
+      <h4 className='subtitle is-3'> My Cars</h4>
       <div className='search field is-horizontal'>
         <label className='label'>Search</label>
         <input
