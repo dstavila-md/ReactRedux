@@ -3,9 +3,7 @@ import { changeCost, changeName, addCar } from '../store';
 
 function CarForm() {
   const dispatch = useDispatch();
-  const name = useSelector((state) => {
-    return state.form.name;
-  });
+  const name = useSelector((state) => state.form.name);
   const cost = useSelector((state) => state.form.cost);
 
   const handleNameChange = (event) => {
