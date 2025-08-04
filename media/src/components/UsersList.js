@@ -23,6 +23,9 @@ function UsersList() {
       })
       .catch((error) => {
         setLoadingUsersError(error);
+      })
+      .finally(() => {
+        setIsLoadingUsers(false);
       });
   }, [dispatch]);
 
