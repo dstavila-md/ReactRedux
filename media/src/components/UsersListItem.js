@@ -1,25 +1,24 @@
+import { Fragment } from 'react/jsx-runtime';
 import { GoTrashcan } from 'react-icons/go';
 import Button from './Button';
 import { removeUser } from '../store';
 import { useThunk } from '../hooks/use-thunk';
+import ExpandablePanel from './ExpandablePanel';
 
 function UsersListItem({ user }) {
   const [doRemoveUser, isLoading, error] = useThunk(removeUser);
   const handleClick = () => doRemoveUser(user);
-
-  return (
-    <div className='mb-2 border rounded'>
-      <div className='flex flex-row p-2 justify-between items-center cursor-pointer'>
-        <div className='flex flex-row items-center justify-between'>
-          <Button loading={isLoading} onClick={handleClick} className='mr-3'>
-            <GoTrashcan />
-          </Button>
-          {error && <div>Error removing user...</div>}
-          {user.name}
-        </div>
-      </div>
-    </div>
+  const header = (
+    <Fragment>
+      <Button loading={isLoading} onClick={handleClick} className='mr-3'>
+        <GoTrashcan />
+      </Button>
+      {error && <div>Error removing user...</div>}
+      {user.name}
+    </Fragment>
   );
+
+  return <ExpandablePanel header={header} children={'CONTENT'} />;
 }
 
 export default UsersListItem;
