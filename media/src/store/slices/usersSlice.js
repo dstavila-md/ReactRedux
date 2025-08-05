@@ -38,8 +38,8 @@ const usersSlice = createSlice({
     });
     builder.addCase(removeUser.fulfilled, (state, action) => {
       state.isLoading = false;
-      // FIX ME !!!
-      console.log(action);
+      const userToDelete = action.payload;
+      state.data = state.data.filter((user) => user.id !== userToDelete.id);
     });
     builder.addCase(removeUser.rejected, (state, action) => {
       state.isLoading = false;

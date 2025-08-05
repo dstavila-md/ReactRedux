@@ -11,7 +11,7 @@ export function useThunk(thunk) {
       setIsLoading(true);
       dispatch(thunk(arg))
         .unwrap()
-        .catch((error) => setError())
+        .catch((error) => setError(error))
         .finally(() => setIsLoading(false));
     },
     [dispatch, thunk]
