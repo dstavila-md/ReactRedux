@@ -1,8 +1,25 @@
 {
   "users": [
-    { "id": 1, "name": "John Doe" },
-    { "id": 2, "name": "Jane Smith" }
+    {
+      "id": 1,
+      "name": "John Doe"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith"
+    }
   ],
-  "albums": [{ "id": 1, "title": "Dino trip", "userId": 1 }],
+  "albums": [
+    {
+      "id": 1,
+      "title": "Dino trip",
+      "userId": 1
+    },
+    {
+      "userId": 1,
+      "title": "Recycled Cotton Chips",
+      "id": 2
+    }
+  ],
   "photos": []
 }
