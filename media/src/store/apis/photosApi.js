@@ -26,7 +26,7 @@ const photosApi = createApi({
             method: 'POST',
             body: {
               albumId: album.id,
-              url: faker.image.abstract(150, 150, true),
+              url: `https://picsum.photos/seed/${Math.random()}/150/150`,
             },
           };
         },
