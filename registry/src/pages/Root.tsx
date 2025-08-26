@@ -1,9 +1,9 @@
-import { Outlet } from "react-router-dom";
-import Header from "../components/Header";
+import { Outlet } from 'react-router-dom';
+import Header from '../components/Header';
 
 export default function Root() {
   return (
-    <div>
+    <div className='container mx-auto px-20'>
       <Header />
       <Outlet />
     </div>
