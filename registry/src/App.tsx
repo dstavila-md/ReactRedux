@@ -10,7 +10,7 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: '/search', element: <SearchPage /> },
+      { path: '/search', element: <SearchPage />, loader: () => { return ['react', 'react-redux', 'redux']} },
       { path: '/packages/:name', element: <DetailsPage /> },
     ],
   },
