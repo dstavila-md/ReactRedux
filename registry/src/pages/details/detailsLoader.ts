@@ -18,5 +18,7 @@ export async function detailsLoader({ params }: LoaderArgs): Promise<DetailsLoad
 
   const details = await getPackage(name);
 
+	console.log(details);
+
   return { details };
 }
