@@ -15,10 +15,6 @@ export async function detailsLoader({ params }: LoaderArgs): Promise<DetailsLoad
   if (!name) {
     throw new Error('Package name is required');
   }
-
   const details = await getPackage(name);
-
-	console.log(details);
-
   return { details };
 }
