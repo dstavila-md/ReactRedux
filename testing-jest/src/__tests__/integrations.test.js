@@ -33,10 +33,13 @@ it('can fetch a list of commetns and display them', (done) => {
   setTimeout(() => {
     wrapped.update();
 
-    expect(wrapped.find('li').length).toEqual(2);
-
-    done();
-
-    wrapped.unmount();
+    try {
+      expect(wrapped.find('li').length).toEqual(2);
+      done();
+    } catch (error) {
+      done.fail(error);
+    } finally {
+      wrapped.unmount();
+    }
   }, 100);
 });
