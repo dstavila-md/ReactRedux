@@ -32,7 +32,11 @@ it('can fetch a list of commetns and display them', (done) => {
   // expect to find a list of comments
   setTimeout(() => {
     wrapped.update();
+
     expect(wrapped.find('li').length).toEqual(2);
+
     done();
+
+    wrapped.unmount();
   }, 100);
 });
