@@ -7,7 +7,7 @@ class CommentBox extends Component {
   state = { comment: '' };
 
   // Our component just got rendered
-  comonentDidMount() {
+  componentDidMount() {
     this.shouldNavigateAway();
   }
 
@@ -19,7 +19,7 @@ class CommentBox extends Component {
   shouldNavigateAway() {
     if (!this.props.auth) {
       // Navigate away
-      console.log('Navigate away');
+      this.props.history.push('/');
     }
   }
 
