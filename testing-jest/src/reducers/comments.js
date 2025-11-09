@@ -9,7 +9,6 @@ export default function (state = [], action) {
       return [...state, ...comments];
     case SAVE_COMMENT:
       return [...state, action.payload];
-      break;
     default:
       return state;
   }
